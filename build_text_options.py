@@ -1,0 +1,83 @@
+# Generates hero-text-options.html: 7 placements for the hero intro paragraph.
+T = "I'm Marsha Hunter, a qualified and experienced counsellor. I offer a welcoming, non-judgemental space where you can work through challenging feelings and situations."
+H = '<h2>A safe space<br>to feel <em>heard</em>.</h2>'
+B = '<div class="btns"><span class="btn p">Arrange an initial session</span><span class="btn g">Session fees</span></div>'
+F = '<ul><li>Registered with the BACP</li><li>Individuals and couples</li><li>Sessions via Zoom</li></ul>'
+IMG = '<img src="theme/images/marsha-hunter.jpg" alt="">'
+def P(cls=""): return '<p class="lead %s">%s</p>' % (cls, T)
+def hero(left, art=IMG, below="", cls=""):
+    return '<div class="h %s"><div class="cols"><div class="h-text">%s</div><div class="h-art">%s</div></div>%s</div>' % (cls, left, art, below)
+V = [
+ ("Under the headline", "Where it is now: headline, then the text, then the buttons", hero(H + P() + B + F)),
+ ("Under the buttons", "Headline and buttons first, the text as a quieter note below with a yellow line", hero(H + B + F + P("aside"))),
+ ("Under the photo", "The text becomes a caption beneath her photo, so it reads as her speaking", hero(H + B + F, IMG + P("caption"))),
+ ("Card on the photo", "The text sits on a white card overlapping the bottom of the photo", hero(H + B + F, IMG + P("card"), cls="tall")),
+ ("Centred below the hero", "Headline and photo on top, the text centred across the full width underneath", hero(H + B + F, below=P("below"))),
+ ("Above the headline", "The text introduces her first, in smaller type, then the headline", hero(P("intro") + H + B + F)),
+ ("Not in the hero", "Hero is just headline, buttons and photo. The About section directly below already opens with almost the same sentence", hero(H + B + F)),
+]
+cards = "".join(f'''
+<article class="opt">
+  <header><span class="num">{i}</span><div><strong>{n}</strong><small>{d}</small></div></header>
+  {h}
+</article>''' for i, (n, d, h) in enumerate(V, 1))
+html = '''<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Intro text options — Marsha Hunter Counselling</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:#dfe5dc;color:#555a56;font:16px/1.6 "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
+.page{max-width:1260px;margin:0 auto;padding:40px 20px 72px}
+.intro-h h1{margin:0 0 6px;font:700 28px/1.2 "Plus Jakarta Sans",sans-serif;color:#24392f}
+.intro-h p{margin:0;max-width:62ch}
+.opt{margin-top:28px;border-radius:20px;overflow:hidden;border:1px solid #c9d1c6;background:#fff}
+.opt header{display:flex;align-items:center;gap:14px;padding:14px 20px;border-bottom:1px solid #d9dbd6}
+.num{flex:none;width:38px;height:38px;border-radius:50%;background:#35543f;color:#fff;font-weight:700;display:grid;place-items:center}
+.opt header strong{display:block;color:#24392f;line-height:1.3}
+.opt header small{display:block;font-size:13px}
+
+.h{padding:64px;background:radial-gradient(520px 400px at 78% 24%,rgba(245,220,147,.75),transparent 70%),radial-gradient(660px 480px at 96% 92%,#cfdccc,transparent 70%),radial-gradient(520px 360px at 3% 100%,#e2eadf,transparent 70%),#f5f5f1}
+.cols{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.h h2{margin:0;font:600 56px/1.14 "Plus Jakarta Sans",sans-serif;letter-spacing:-.02em;color:#24392f}
+.h h2 em{font-style:normal;color:#35543f;background:linear-gradient(transparent 68%,#f5dc93 68%,#f5dc93 92%,transparent 92%)}
+.lead{margin:20px 0 0;font-size:19.5px;line-height:1.65;max-width:32em;outline:2px dashed rgba(53,84,63,.35);outline-offset:8px;border-radius:4px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{font-weight:600;font-size:16.5px;line-height:1.2;padding:14px 26px;border-radius:999px;color:#24392f}
+.btn.p{background:#ecc45a}
+.btn.g{box-shadow:inset 0 0 0 1.5px #6b8a6f}
+.h ul{display:flex;flex-wrap:wrap;gap:8px 22px;list-style:none;padding:0;margin:28px 0 0;font-size:15.5px;font-weight:500;color:#2b2e2c}
+.h li{display:flex;align-items:center;gap:8px}
+.h li::before{content:"";width:8px;height:8px;border-radius:50%;background:#ecc45a}
+.h-art{position:relative;width:100%;max-width:430px;margin:0 auto}
+.h-art img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:26px;box-shadow:0 24px 48px rgba(36,57,47,.18)}
+
+.lead.aside{margin-top:32px;padding-left:18px;border-left:3px solid #ecc45a;font-size:17px;border-radius:0}
+.lead.caption{margin-top:26px;font-size:17px;text-align:center;max-width:none}
+.tall .h-art{padding-bottom:96px}
+.lead.card{position:absolute;left:-36px;right:36px;bottom:0;margin:0;padding:20px 24px;background:#fff;border-radius:18px;box-shadow:0 14px 36px rgba(36,57,47,.16);font-size:16.5px;line-height:1.55;color:#2b2e2c;max-width:none;outline-offset:4px}
+.lead.below{margin:56px auto 0;padding-top:36px;border-top:1px solid #c9d1c6;text-align:center;font:500 23px/1.5 "Plus Jakarta Sans",sans-serif;letter-spacing:-.01em;color:#24392f;max-width:38em}
+.lead.intro{margin:0 0 22px;font-size:17px;max-width:30em}
+
+@media (max-width:820px){
+  .h{padding:40px 24px}
+  .cols{grid-template-columns:1fr;gap:40px}
+  .h h2{font-size:38px}
+  .lead.card{left:-8px;right:8px}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="intro-h">
+    <h1>Where should the intro text go?</h1>
+    <p>Seven placements for the "I'm Marsha Hunter…" paragraph. The dashed outline is only here to show where the text is in each option; it won't be on the real page. Pick a number.</p>
+  </div>''' + cards + '''
+</div>
+</body>
+</html>
+'''
+open("hero-text-options.html", "w").write(html)
