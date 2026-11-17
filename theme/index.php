@@ -4,8 +4,8 @@
  *
  * CONTACT DETAILS: change the two values below — they are used everywhere on the page.
  */
-$mh_email = 'email@example.com';
-$mh_phone = '07000 000000';
+$mh_email = 'mhcounsellingandcoaching@gmail.com';
+$mh_phone = '07947 609533';
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -75,16 +75,18 @@ $mh_phone = '07000 000000';
         <span class="eyebrow">About me</span>
         <h2>Qualified, experienced and here to listen.</h2>
         <ul class="credentials">
-          <li>Registered with the BACP</li>
+          <li>Registered with the BACP <small>Registration number 00861805</small></li>
           <li>Level 5 Diploma in Psychotherapeutic Counselling <small>Headstrong Academy</small></li>
           <li>Diploma in Therapeutic Counselling <small>Headstrong Academy</small></li>
           <li>Intensive training in Couples Counselling</li>
+          <li>Training in EMDR, British Sign Language (BSL) and coaching</li>
         </ul>
       </div>
       <div class="about-body">
-        <p>I'm Marsha Hunter, a qualified and experienced counsellor, registered with the BACP, with a passion for creating a safe space for both individuals and couples.</p>
+        <p>I'm Marsha Hunter, a qualified and experienced counsellor, registered with the BACP, with a passion for creating a safe therapeutic space for both individuals and couples.</p>
         <p>I obtained my Diploma in Therapeutic Counselling, followed by an advanced Level 5 Diploma in Psychotherapeutic Counselling at Headstrong Academy. I have also undertaken intensive training in Couples Counselling, deepening my understanding of the complexities of relationships, affairs and betrayal, separation, the processes of rebuilding trust, repairing relationships and strengthening communication, and GSRD (gender, sexuality and relationship diversity) relationships.</p>
-        <p>I create a welcoming and non-judgemental space where individuals and couples can feel heard and work through challenging feelings and situations.</p>
+        <p>I have also undertaken training in Eye Movement Desensitisation and Reprocessing (EMDR), British Sign Language (BSL) and coaching. I have experience working with Deaf clients and recognise the importance of making therapy accessible and responsive to different communication needs.</p>
+        <p>I'm down to earth, and create a welcoming and non-judgemental space where individuals and couples can feel heard and work through challenging feelings and situations.</p>
       </div>
     </div>
   </section>
@@ -94,7 +96,7 @@ $mh_phone = '07000 000000';
       <div class="approach-head">
         <span class="eyebrow">My approach</span>
         <h2>Relational and kind.</h2>
-        <p>You can bring the issues that feel relevant and important to you. Whether you're navigating relationship difficulties, facing personal challenges or just wanting to understand yourself better, my door is open to you.</p>
+        <p>You can bring the issues that feel relevant and important to you. Whether you're navigating relationship difficulties, anxiety, depression, facing personal challenges or just wanting to understand yourself better, my door is open to you.</p>
       </div>
 
       <div class="approach-grid">
@@ -102,6 +104,8 @@ $mh_phone = '07000 000000';
           <h3>Individual counselling</h3>
           <p>A space that is yours, to explore what you're facing at your own pace and to understand yourself better.</p>
           <ul class="tags">
+            <li>Anxiety</li>
+            <li>Depression</li>
             <li>Personal challenges</li>
             <li>Relationship difficulties</li>
             <li>Understanding yourself</li>
@@ -180,7 +184,7 @@ $mh_phone = '07000 000000';
   <div class="wrap">
     <p class="crisis">This is not an emergency service. If you need urgent help, call Samaritans free on 116 123, or 999 in an emergency.</p>
     <p>&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?> Marsha Hunter Counselling</p>
-    <p>Registered with the BACP &middot; Online sessions via Zoom</p>
+    <p>Registered with the BACP, no. 00861805 &middot; Online sessions via Zoom</p>
   </div>
 </footer>
 

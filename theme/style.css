@@ -505,11 +505,15 @@ a:focus-visible, .btn:focus-visible {
 
 @media (max-width: 520px) {
   .site-header { padding-inline: 12px; }
-  .site-header .wrap { border-radius: 28px; padding: 12px 22px 14px; }
-  .nav { gap: 6px 20px; }
-  .nav a { font-size: 16px; }
+  .site-header .wrap { flex-wrap: nowrap; gap: 8px; padding: 8px 8px 8px 16px; }
+  .nav a:not(.nav-cta) { display: none; }
+  .brand { gap: 8px; font-size: 19px; }
+  .brand-mark { width: 36px; }
+  .brand-text span { font-size: 10.5px; }
+  .nav .nav-cta { padding: 10px 14px; font-size: 14px; white-space: nowrap; }
   .hero-actions .btn { width: 100%; text-align: center; }
-  .contact-link { width: 100%; }
+  .contact-link { width: 100%; padding: 20px 14px; }
+  .contact-link span { font-size: min(4vw, 21px); overflow-wrap: normal; }
 }
 
 @media (prefers-reduced-motion: reduce) {
